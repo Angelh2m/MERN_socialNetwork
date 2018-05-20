@@ -14,3 +14,6 @@
 - Assign JWT tokens to signed users
 - Validator handlers using "validator"
 
+
+## Profile-API-Routes
+- React implementation with the backend
