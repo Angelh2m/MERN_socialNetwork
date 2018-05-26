@@ -6,7 +6,6 @@
  
     **Set an account with Mlab**
 
-
 ## section two protecting routes
 - Setting up mongoose Schemas
 - Set up gravatar images
@@ -17,3 +16,8 @@
 
 ## Profile-API-Routes
 - React implementation with the backend
+
+## React Router  Component State
+- React router 
+- React form handling
+- Conditionals and state managment 

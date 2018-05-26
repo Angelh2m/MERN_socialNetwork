@@ -1,4 +1,4 @@
 module.exports = {
-  mongoURI: 'mongodb://brad:brad@ds231725.mlab.com:31725/devconnector',
-  secretOrKey: 'secret'
+    mongoURI: 'mongodb://angelo:password@ds229290.mlab.com:29290/react_app',
+    secretOrKey: 'secret' // for JWT
 };
