@@ -17,3 +17,11 @@
 
 ## Profile-API-Routes
 - React implementation with the backend
+
+
+## React / client
+- Setting up proxy
+- Setting up ```concurrently``` npm package to run two servers in one  
+- ```"client-install": "cd client && npm install"```
+- ``` npm install --prefix client ```
+- RUN CLIENT AND SERVER ``` run npm dev ```
