@@ -1,5 +1,1 @@
-
-
-.1-  ``` Provider , createStore, applyMiddleware```
-- PROVIDER HOLDS THE STATE OF THE APP
-
+* Thunk is for Asyncronus call and dispatches once it's complete;
