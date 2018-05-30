@@ -8,8 +8,8 @@ import { clearCurrentProfile } from '../../actions/profileActions';
 class Navbar extends Component {
   onLogoutClick(e) {
     e.preventDefault();
-    this.props.logoutUser();
     this.props.clearCurrentProfile();
+    this.props.logoutUser();
   }
 
   render() {
@@ -18,17 +18,22 @@ class Navbar extends Component {
     const authLinks = (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
+          <Link className="nav-link" to="/dashboard">
+            Dashboard
+          </Link>
+        </li>
+        <li className="nav-item">
           <a
             href=""
             onClick={this.onLogoutClick.bind(this)}
-            className="nav-Link"
+            className="nav-link"
           >
             <img
               className="rounded-circle"
-              style={{ width: '25px', marginRight: '5px' }}
               src={user.avatar}
               alt={user.name}
-              title="You must have a gravatar"
+              style={{ width: '25px', marginRight: '5px' }}
+              title="You must have a Gravatar connected to your email to display an image"
             />{' '}
             Logout
           </a>
@@ -82,12 +87,13 @@ class Navbar extends Component {
     );
   }
 }
+
 Navbar.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   auth: state.auth
 });
 

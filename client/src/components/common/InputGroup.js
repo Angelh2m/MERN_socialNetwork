@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 const InputGroup = ({
   name,
   placeholder,
-  icon,
-  type,
   value,
   error,
+  icon,
+  type,
   onChange
 }) => {
   return (

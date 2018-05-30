@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-// import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { registerUser } from '../../actions/authActions';
 import TextFieldGroup from '../common/TextFieldGroup';
@@ -28,10 +27,8 @@ class Register extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps) {
-      this.setState({
-        errors: nextProps.errors
-      });
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
     }
   }
 
@@ -48,9 +45,6 @@ class Register extends Component {
       password: this.state.password,
       password2: this.state.password2
     };
-
-    // console.log('PROPS, ', this.props);
-    // console.log('STATE, ', this.state);
 
     this.props.registerUser(newUser, this.props.history);
   }
@@ -71,7 +65,6 @@ class Register extends Component {
                 <TextFieldGroup
                   placeholder="Name"
                   name="name"
-                  type="name"
                   value={this.state.name}
                   onChange={this.onChange}
                   error={errors.name}
@@ -83,7 +76,7 @@ class Register extends Component {
                   value={this.state.email}
                   onChange={this.onChange}
                   error={errors.email}
-                  info="This site uses Gravatar profile image"
+                  info="This site uses Gravatar so if you want a profile image, use a Gravatar email"
                 />
                 <TextFieldGroup
                   placeholder="Password"
@@ -93,16 +86,14 @@ class Register extends Component {
                   onChange={this.onChange}
                   error={errors.password}
                 />
-
                 <TextFieldGroup
                   placeholder="Confirm Password"
                   name="password2"
                   type="password"
                   value={this.state.password2}
                   onChange={this.onChange}
-                  error={errors.password}
+                  error={errors.password2}
                 />
-
                 <input type="submit" className="btn btn-info btn-block mt-4" />
               </form>
             </div>
@@ -119,10 +110,9 @@ Register.propTypes = {
   errors: PropTypes.object.isRequired
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
 });
 
-// Takes the action and connects to the store
 export default connect(mapStateToProps, { registerUser })(withRouter(Register));
